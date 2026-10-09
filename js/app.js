@@ -52,7 +52,20 @@
       <path d="M150 74c6-6 18-6 22 2 4 8 2 20-4 30-4 8-10 12-14 6-4-6-2-14-6-20-4-6-4-12 2-18z" fill="${NAVY}"/>
       <path d="M96 62c8-4 22-2 26 4 2 6-6 10-10 16-4 6-2 14-10 14-6 0-10-8-12-14-2-8 0-16 6-20z" fill="${CORAL}"/>
       <path d="M182 60c10-4 30-4 46 0 12 4 10 14 0 18-10 4-24 2-34 2-8 0-16-6-12-20z" fill="#e3d6d4"/>
-      <path d="M206 108c8-2 18 0 20 6s-6 10-14 8-12-12-6-14z" fill="#e3d6d4"/>`
+      <path d="M206 108c8-2 18 0 20 6s-6 10-14 8-12-12-6-14z" fill="#e3d6d4"/>`,
+    ph: `
+      <rect width="320" height="180" fill="${NAVY}"/>
+      <defs><linearGradient id="ph-scale" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#d7191c"/><stop offset=".2" stop-color="#f26522"/><stop offset=".35" stop-color="#fbb817"/>
+        <stop offset=".5" stop-color="#4cb848"/><stop offset=".65" stop-color="#3cc1d4"/><stop offset=".8" stop-color="#2479c1"/><stop offset="1" stop-color="#6c4bd6"/>
+      </linearGradient></defs>
+      <path d="M96 34h64M102 34v100a12 12 0 0 0 12 12h28a12 12 0 0 0 12-12V34" fill="none" stroke="#e9e4f2" stroke-width="3" stroke-linecap="round"/>
+      <path d="M105 84h46v50a9 9 0 0 1-9 9h-28a9 9 0 0 1-9-9z" fill="#4cb848" opacity=".85"/>
+      <g fill="#fff" opacity=".55"><circle cx="118" cy="120" r="3"/><circle cx="134" cy="106" r="2.2"/><circle cx="126" cy="132" r="2"/></g>
+      <path d="M128 12v16" stroke="${CORAL}" stroke-width="3" stroke-linecap="round"/><circle cx="128" cy="48" r="4" fill="${CORAL}"/>
+      <rect x="206" y="30" width="16" height="120" rx="3" fill="url(#ph-scale)"/>
+      <path d="M200 90h28" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+      <g fill="#e9e4f2" font-family="sans-serif" font-size="12" font-weight="700"><text x="232" y="40">0</text><text x="236" y="95">7</text><text x="232" y="150">14</text></g>`
   };
 
   const CAT_ICON = {
