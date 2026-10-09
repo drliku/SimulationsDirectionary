@@ -43,5 +43,13 @@ window.SIMULATIONS = [
     art: "map",
     description: "Compare any two countries on an Equal Earth map and a Mercator map to see how much Mercator inflates their size.",
     features: ["Two maps", "Country compare", "Guessing game"]
+  },
+  {
+    title: "pH Lab",
+    url: "https://claude.ai/artifact/4YZnCUAE9V4qemVhrKMREp",
+    categories: ["chemistry"],
+    art: "ph",
+    description: "Experiment with acids, bases and dilution in a 3D beaker and see how the pH scale works.",
+    features: ["3D beaker", "Acids and bases", "Dilution"]
   }
 ];
