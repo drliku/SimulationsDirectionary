@@ -201,7 +201,7 @@
     return `
       <article class="sim" data-search="${esc(search)}">
         <div class="sim-card">
-          <a class="thumb" href="${url}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">${artFor(sim)}<span class="badge">${catName(catId)}</span></a>
+          <a class="thumb" href="${url}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">${artFor(sim)}${previewFor(sim)}<span class="badge">${catName(catId)}</span></a>
           <div class="sim-body">
             <h3><a href="${url}" target="_blank" rel="noopener">${esc(sim.title)}</a></h3>
             <p>${esc(sim.description)}</p>
@@ -214,6 +214,14 @@
           </div>
         </div>
       </article>`;
+  }
+
+  // Gameplay clip that plays over the cover on hover (see "Hover previews" below)
+  function previewFor(sim) {
+    if (!sim.preview) return "";
+    return `<video class="preview" muted loop playsinline preload="none" data-src="${esc(sim.preview)}"></video>` +
+      `<span class="preview-tag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Preview</span>` +
+      `<span class="preview-bar"></span>`;
   }
 
   function section(cat) {
@@ -280,6 +288,49 @@
   window.addEventListener("hashchange", () => setFilter(location.hash.slice(1) || "all"));
 
   setFilter(location.hash.slice(1) || "all");
+
+  // ---------- Hover previews ----------
+  // Mouse: play a card's 10 s clip while the pointer (or keyboard focus) is on it.
+  // Touch screens can't hover, so there the clip of the card in the middle of the screen plays.
+  // Nothing plays for people who asked for reduced motion. Clips only download when first played.
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const canHover = matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  function play(card) {
+    const v = card.querySelector("video.preview");
+    if (!v) return;
+    if (!v.src) v.src = v.dataset.src;
+    v.currentTime = 0;
+    card.classList.add("previewing");
+    v.play().catch(() => card.classList.remove("previewing"));
+  }
+  function stop(card) {
+    const v = card.querySelector("video.preview");
+    if (!v) return;
+    card.classList.remove("previewing");
+    v.pause();
+  }
+
+  if (!reduceMotion) {
+    const cards = document.querySelectorAll(".sim-card");
+    if (canHover) {
+      cards.forEach((card) => {
+        card.addEventListener("mouseenter", () => play(card));
+        card.addEventListener("mouseleave", () => stop(card));
+        card.addEventListener("focusin", () => play(card));
+        card.addEventListener("focusout", (e) => { if (!card.contains(e.relatedTarget)) stop(card); });
+      });
+    } else if ("IntersectionObserver" in window) {
+      let active = null;
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          if (en.isIntersecting) { if (active && active !== en.target) stop(active); active = en.target; play(active); }
+          else if (en.target === active) { stop(active); active = null; }
+        });
+      }, { rootMargin: "-40% 0px -40% 0px" });   // a thin band across the middle of the screen
+      cards.forEach((card) => { if (card.querySelector("video.preview")) io.observe(card); });
+    }
+  }
 
   // ---------- "How to use" window ----------
   // The manual text comes from simulations.js (our own content) and may contain <b>/<kbd>, so it isn't escaped.

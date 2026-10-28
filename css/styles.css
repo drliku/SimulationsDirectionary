@@ -490,3 +490,52 @@
   .sim-directory .launch svg { transition: none; }
   .sim-directory .sim-card:hover { transform: none; }
 }
+
+/* ---------- Hover previews (10 s gameplay clip over the cover) ---------- */
+.sim-directory .thumb { overflow: hidden; }
+.sim-directory .thumb video.preview {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: var(--navy-deep);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.sim-directory .previewing .thumb video.preview { opacity: 1; }
+.sim-directory .preview-tag {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px 4px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--white);
+  background: rgba(30, 42, 71, 0.75);
+  border-radius: 50px;
+  transition: opacity 0.3s ease;
+}
+.sim-directory .preview-tag svg { width: 12px; height: 12px; }
+.sim-directory .previewing .preview-tag { opacity: 0; }
+/* Thin coral bar that fills over the clip's 10 seconds */
+.sim-directory .preview-bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background: var(--coral);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.sim-directory .previewing .preview-bar { animation: preview-fill 10s linear infinite; }
+@keyframes preview-fill { to { transform: scaleX(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .sim-directory .preview-tag, .sim-directory .preview-bar { display: none; }
+}
