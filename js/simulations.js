@@ -1,6 +1,7 @@
 // The directory's content. To add a simulation, add an entry to SIMULATIONS:
 //   categories: one or more ids from CATEGORIES (the first is its main subject)
 //   art: key into SIM_ART in app.js, or leave it out to use the subject's icon
+//   preview: 10 s muted gameplay clip that plays over the cover on hover (16:9 mp4, e.g. previews/ph.mp4)
 //   image: path to a screenshot to use as the cover instead of art (16:9, e.g. assets/cochlea.jpg)
 //   description: one or two sentences shown on the card
 //   about: a short paragraph shown in the "How to use" window
@@ -20,6 +21,7 @@ window.SIMULATIONS = [
   {
     title: "Forest Ecosystem Lab",
     url: "https://claude.ai/artifact/A823nRU8JrUPHVF9zCqmri",
+    preview: "previews/forest.mp4",
     categories: ["biology"],
     art: "forest",
     description: "Wolves, deer and plants live, hunt and die animal by animal in a 3D northern forest. Change the rules of nature and watch the populations rise and crash.",
@@ -54,6 +56,7 @@ window.SIMULATIONS = [
   {
     title: "Formica Ant Colony",
     url: "https://claude.ai/artifact/SdzwgK965eDU6Jwn2apbtM",
+    preview: "previews/ant.mp4",
     categories: ["biology"],
     image: "assets/ant-colony.jpg",
     description: "Watch an ant colony forage, dig tunnels and raise its young underground, then add food, predators and rival colonies to see how it copes.",
@@ -71,6 +74,7 @@ window.SIMULATIONS = [
   {
     title: "Virus Outbreak Simulator",
     url: "https://claude.ai/artifact/WJETDmEiWESH19sBAv9yEf",
+    preview: "previews/virus.mp4",
     categories: ["biology"],
     image: "assets/virus-outbreak.jpg",
     description: "Follow a virus as it spreads through a small city of 700 people, then try masks, vaccines, quarantine and lockdown to flatten the curve.",
@@ -90,6 +94,7 @@ window.SIMULATIONS = [
   {
     title: "Simple Pendulum",
     url: "https://claude.ai/artifact/WK5Qw4Bkfvamq8zLNEKoNq",
+    preview: "previews/pendulum.mp4",
     categories: ["physics"],
     art: "pendulum",
     description: "Swing a 3D pendulum and change its length, angle and gravity while the energy bars trade kinetic for potential energy.",
@@ -106,6 +111,7 @@ window.SIMULATIONS = [
   {
     title: "Einstein's Mirror",
     url: "https://claude.ai/artifact/NbLSXMiaRJ94ykhuoWPdQ3",
+    preview: "previews/einstein.mp4",
     categories: ["physics"],
     art: "mirror",
     description: "Could you see yourself in a mirror while travelling at nearly the speed of light? Ride a relativistic train and find out.",
@@ -123,6 +129,7 @@ window.SIMULATIONS = [
   {
     title: "Time Dilation Lab",
     url: "https://claude.ai/artifact/MnCwBKGHU5SsHhej2pNdik",
+    preview: "previews/timedilation.mp4",
     categories: ["physics"],
     art: "lightclock",
     description: "Compare a clock on Earth with a clock on a fast spaceship, and watch light clocks tick slower as the ship nears the speed of light.",
@@ -140,6 +147,7 @@ window.SIMULATIONS = [
   {
     title: "Photon Lab",
     url: "https://claude.ai/artifact/JKwHzzmJTRzApVUiyLq32w",
+    preview: "previews/photon.mp4",
     categories: ["physics"],
     art: "prism",
     description: "Build an optics bench with lasers, mirrors, lenses and prisms, and trace how light reflects, refracts and splits into a rainbow.",
@@ -157,6 +165,7 @@ window.SIMULATIONS = [
   {
     title: "Marble Race Creator",
     url: "https://claude.ai/artifact/PLcsiXAh1JMjcBoM98LLaX",
+    preview: "previews/marble.mp4",
     categories: ["physics"],
     image: "assets/marble-race.jpg",
     description: "Build a 3D marble run from ramps, loops, spirals and jumps, then race up to a pack of marbles down it and see which one wins.",
@@ -176,6 +185,7 @@ window.SIMULATIONS = [
   {
     title: "Lunar Phase Simulator",
     url: "https://claude.ai/artifact/Keha6EZSYNKAFcVVPMD4hS",
+    preview: "previews/lunar.mp4",
     categories: ["astronomy"],
     art: "moon",
     description: "Drag the Moon around its orbit and watch its phase change, as seen from Earth and from an observer's horizon.",
@@ -192,6 +202,7 @@ window.SIMULATIONS = [
   {
     title: "My Solar System 3D",
     url: "https://claude.ai/artifact/P3CgFbVntUJpM9z2UQBq78",
+    preview: "previews/solar.mp4",
     categories: ["astronomy", "physics"],
     art: "orbits",
     description: "Build your own system of suns, planets and moons, then watch gravity pull them into orbits, ellipses and figure-8s.",
@@ -211,6 +222,7 @@ window.SIMULATIONS = [
   {
     title: "Pythagorean Lab",
     url: "https://claude.ai/artifact/U9DbMDd19cKHPbminEGVF9",
+    preview: "previews/pythag.mp4",
     categories: ["mathematics"],
     art: "pythagoras",
     description: "Drag the corners of a right triangle and watch the squares on its sides prove that a² + b² = c².",
@@ -227,6 +239,7 @@ window.SIMULATIONS = [
   {
     title: "Galton Board",
     url: "https://claude.ai/artifact/W5gXBeUf39N48G8kQjHqSg",
+    preview: "previews/galton.mp4",
     categories: ["mathematics"],
     art: "galton",
     description: "Drop balls through rows of pegs and watch random left-right bounces build a bell curve.",
@@ -244,6 +257,7 @@ window.SIMULATIONS = [
   {
     title: "Unit Circle Waves",
     url: "https://claude.ai/artifact/PPUxyEv2ojAwsgCZvL4LR1",
+    preview: "previews/unitcircle.mp4",
     categories: ["mathematics"],
     art: "unitcircle",
     description: "Watch a point rotating around the unit circle draw sine and cosine waves, then change amplitude, frequency and phase.",
@@ -263,6 +277,7 @@ window.SIMULATIONS = [
   {
     title: "Atom Builder",
     url: "https://claude.ai/artifact/XvLMEeJrVQMohr3pmyoZDC",
+    preview: "previews/atom.mp4",
     categories: ["chemistry", "physics"],
     art: "atom",
     description: "Add protons, neutrons and electrons to build an atom in 3D and see how its structure decides which element it is.",
@@ -279,6 +294,7 @@ window.SIMULATIONS = [
   {
     title: "pH Lab",
     url: "https://claude.ai/artifact/4YZnCUAE9V4qemVhrKMREp",
+    preview: "previews/ph.mp4",
     categories: ["chemistry"],
     art: "ph",
     description: "Mix acids, bases and water in a 3D beaker and see how the pH scale works.",
@@ -297,6 +313,7 @@ window.SIMULATIONS = [
   {
     title: "Equal Earth Projection",
     url: "https://claude.ai/artifact/1EGzjD2gBoQNxTd4QEVYyL",
+    preview: "previews/equal-earth.mp4",
     categories: ["geography"],
     art: "map",
     description: "Compare any two countries on an Equal Earth map and a Mercator map to see how much Mercator inflates their size.",
@@ -313,6 +330,7 @@ window.SIMULATIONS = [
   {
     title: "Earth Sandbox",
     url: "https://claude.ai/artifact/RHxpsrrFUz8Tzqo1MPo3RZ",
+    preview: "previews/earth.mp4",
     categories: ["geography"],
     art: "terrain",
     description: "Raise mountains, flood coasts and change the climate of a living world map, then see how habitable your planet becomes.",
@@ -330,6 +348,7 @@ window.SIMULATIONS = [
   {
     title: "Water Cycle Simulator",
     url: "https://claude.ai/artifact/P9QfrQhSbov94xhGyd1PXd",
+    preview: "previews/water.mp4",
     categories: ["geography"],
     art: "watercycle",
     description: "Change the temperature, sunlight and weather in a 3D landscape and watch water evaporate, condense, rain, freeze and flow.",

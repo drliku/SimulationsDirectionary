@@ -22,3 +22,5 @@ Add an entry to `js/simulations.js`:
 ```
 
 `art` is optional: it picks an illustration from `SIM_ART` in `js/app.js`; without it the card shows the subject's icon.
+
+`preview` is optional: a 10 second muted 16:9 clip (e.g. `previews/ph.mp4`, 640x360 H.264) that plays over the cover while the card is hovered.
