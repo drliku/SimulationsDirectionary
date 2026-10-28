@@ -39,6 +39,7 @@ window.SIMULATIONS = [
   {
     title: "Cochlea Simulator",
     url: "https://incomparable-griffin-c6f96d.netlify.app/",
+    preview: "previews/cochlea.mp4",
     categories: ["biology", "physics"],
     image: "assets/cochlea.jpg",
     description: "Play any song through a 3D cochlea and watch your inner ear sort sound into pitch, with high notes at the base and low notes deep in the spiral.",
