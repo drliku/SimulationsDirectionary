@@ -4,7 +4,7 @@ Directionary for TheBrainMaze Website, where we hope to showcase scientific 3d s
 ## The page
 
 Open `index.html` in a browser (or host the folder as a static site). Simulations are grouped into
-Biology, Physics, Astronomy, Mathematics, Chemistry and Geography, with filter chips and a search box.
+Biology, Physics, Astronomy, Mathematics, Chemistry and Geography (19 simulations), with filter chips, a search box and a "How to use" window per simulation.
 Subjects without simulations yet show a "Coming soon" card.
 
 ## Adding a simulation
